@@ -9,16 +9,16 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
     value: "",
   });
 
-  const submitUpdate = value => {
-      updateTodo(edit.id, value)
-      setEdit({
-          id: null,
-          value: ''
-      })
-  }
+  const submitUpdate = (value) => {
+    updateTodo(edit.id, value);
+    setEdit({
+      id: null,
+      value: "",
+    });
+  };
 
   if (edit.id) {
-      return <TodoForm edit={edit} onSubmit={submitUpdate}/>
+    return <TodoForm edit={edit} onSubmit={submitUpdate} />;
   }
 
   return todos.map((todo, index) => (
